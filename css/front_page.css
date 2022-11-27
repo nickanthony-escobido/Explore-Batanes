@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+ }
+
+ html {
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(104, 17, 24);
+}
+
+a{
+    text-decoration: none;
+}
+.home_logo {
+    width: 500px;
+    height: 100%;
+}
+
+.inputgroup {
+    border-radius: 10px;
+}
+
+.long {
+    width: 430px;
+    height: 50px;
+    border-radius: 8px;
+    padding-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+#videoBG {
+    position:fixed;
+    z-index: -1;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    #videoBG {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    #videoBG {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-width:767px){
+    #videoBG {
+        display: none;
+    }
+    body {
+        background: url('/Assignment/Assignment_5/images/Breathtaking-Aerial-View-of-Batanes-2019-Project-LUPAD.jpeg');
+        background-size: cover;
+    }
+}
