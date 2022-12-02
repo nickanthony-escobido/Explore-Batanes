@@ -1,23 +1,3 @@
-@font-face {
-    font-family: 'RoadRage';
-    src: url(../fonts/Road_Rage.otf);
- }
- @font-face {
-    font-family: 'Future Socialism';
-    src: url(../fonts/Future\ Socialism.ttf)
- }
- @font-face {
-    font-family: 'The Barethos';
-    src: url(../fonts/The\ Barethos.ttf);
- }
- @font-face {
-   font-family: 'Cyberpunk';
-   src: url(../fonts/Cyberpunk-Regular.ttf);
- }
- @font-face {
-   font-family: 'Roboto Reg';
-   src: url(../fonts/Roboto-Regular.ttf);
- }
  @font-face {
    font-family: 'Johnny';
    src: url(/fonts/LilJohnny_PERSONAL_USE_ONLY.otf);
@@ -47,17 +27,7 @@ body {
    width: 200px;
    height: 100%;
  }
- .bugslayer {
-    padding-top: 10px;
-    text-align: center;
-    font-family: 'RoadRage';
-    letter-spacing: 5px;
-    font-size: 50px;
-    padding-left: 35px;
-    /* padding-top: 5px; */
-    color: rgb(255, 0, 0);
-    text-shadow: white 1px 2px 0px;
- }
+
 article {
     position: relative;
     width: 490px;
@@ -102,7 +72,7 @@ hr {
     width: 200px;
     height: 35px;
     border-radius: 8px;
-    padding-left: 23px;
+    padding-left: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: none;
 }
@@ -159,7 +129,7 @@ label {
    padding-top: 10px;
    font-size: 14px;
    color: aliceblue;
-   font-family: 'Roboto Reg';
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
    line-height: 13px;
 }
 .reg {

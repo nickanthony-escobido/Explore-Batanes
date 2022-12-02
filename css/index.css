@@ -15,6 +15,13 @@ body {
 a{
     text-decoration: none;
 }
+
+.text { 
+    font-family: 'Tangerine', serif;
+    color: blanchedalmond;
+    font-size: 40px;
+    text-shadow: 1px 1px 1px  rgb(0, 0, 0, 10);
+}
 .home_logo {
     width: 500px;
     height: 100%;
