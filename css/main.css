@@ -79,6 +79,9 @@ a {
     height: 100%;
 }
 
+h3 {
+    color: aliceblue;
+}
 
 .icon img {
     vertical-align: middle;
