@@ -1,73 +1,374 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Explore Batanes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/about-me.css">
 
+    <link 
+    rel="icon" 
+    href="../photo/EB_logo.png"
+    type="image/icon type">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+ 
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../css/about.css" rel="stylesheet">
+    <link href="../css/navFoot.css" rel="stylesheet">
+    <link rel="stylesheet" href="../js/script.js">
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg"">
-      <div class="container-fluid">
-        <a class="navbar-brand p-3 pe-5 ps-5" href="../directory/main.html"><img src="../photo/EB_logo.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse p-3" id="navbarSupportedContent">
-          <form class="d-flex position-absolute top-50 start-50 translate-middle" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          </form>
-          <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto navbar_left gap-5">
-              <li class="nav-item">
-                  <a class="nav-link navbar-dark" aria-current="page" href="../directory/main.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link navbar-dark" href="../directory/about-me.html">About Me</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link navbar-dark" href="#">Work With Me</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link navbar-dark" href="../directory/contact.html">Contact</a>
-                </li>
-          </ul>
-  
+
+  <div class="modal fade" id="logIn" tabindex="-1" aria-labelledby="logInLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body"><!-- Pills navs -->
+           <div class="mb-5">
+            <ul class="nav nav-tabs">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link mared active" type="button" data-bs-toggle="tab"  id="login-tab" aria-current="page" data-bs-target="#login" role="tab" aria-controls="login" aria-selected="true">Sign in</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link mared" type="button" data-bs-toggle="tab"  id="register-tab" aria-current="page" data-bs-target="#register" role="tab" aria-controls="register" aria-selected="true">Sign up</a>
+              </li>
+            </ul>
+           </div> 
+
+
+            <div class="tab-content" id="myTabControl">
+                <div class="tab-pane fade show active" role="tabpanel" id="login" aria-labelledby="login-tab">
+                    <form>
+                        <div class="form-floating mb-3">
+                          <input required type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                          <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input required type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+                  
+                        <!-- 2 column grid layout -->
+                        <div class="row mb-4">
+                          <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-3 mb-md-0">
+                              <input class="form-check-input maredBG" type="checkbox" value="" id="loginCheck" checked />
+                              <label class="form-check-label" for="loginCheck"> Remember me </label>
+                            </div>
+                          </div>
+                  
+                          <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Simple link -->
+                            <a class="mared" href="#!">Forgot password?</a>
+                          </div>
+                        </div>
+                  
+                        <!-- Submit button -->
+                        <div class="d-grid">
+                          <button type="submit" class="btn maredBG btn-block mb-4">Sign in</button>
+                        </div>    
+                        
+                        <p class="text-center">or:</p>
+                        <div class="text-center mb-3">
+                          <p>Sign in with:</p>
+                          <button type="button" class="btn mared btn-floating mx-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                          </button>
+                  
+                          <button type="button" class="btn mared btn-floating mx-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                              <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                            </svg>
+                          </button>
+                  
+                          <button type="button" class="btn mared btn-floating mx-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                            </svg>
+                          </button>
+                  
+                          <button type="button" class="btn mared btn-floating mx-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                          </button>
+                          </button>
+                        </div>
+                        <!-- Register buttons -->
+                        <div class="text-center">
+                          <p>Not a member? <a class="mared" href=#register-tab>
+                            Register</a></p>
+                        </div>
+                      </form>
+                </div>
+                <div class="tab-pane fade show" role="tabpanel" id="register" aria-labelledby="register-tab">
+                  <form>
+                    <!-- Name input -->
+                    <div class="form-floating mb-1">
+                      <input type="name" class="form-control" id="floatingInput" placeholder="name">
+                      <label for="floatingInput">Name</label>
+                    </div>
+              
+                    <!-- Username input -->
+                    <div class="form-floating mb-1">
+                      <input type="username" class="form-control" id="floatingInput" placeholder="username">
+                      <label for="floatingInput">Username</label>
+                    </div>
+              
+                    <!-- Email input -->
+                    <div class="form-floating mb-1">
+                      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                      <label for="floatingInput">Email address</label>
+                    </div>
+
+                    <div class="row g-1">
+                   <!-- Password input -->
+                      <div class="form-floating col ps-1 mb-1">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                      </div>
+              
+                      <!-- Repeat Password input -->
+                      <div class="form-floating col ps-1 mb-1">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="repeat Password">
+                        <label for="floatingPassword">Repeat Password</label>
+                      </div>
+                    </div>
+              
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-2">
+                      <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+                        aria-describedby="registerCheckHelpText" />
+                      <label class="form-check-label" for="registerCheck">
+                        I have read and agree to the terms
+                      </label>
+                    </div>
+              
+                    <!-- Submit button -->
+                    <div class="d-grid">
+                      <button type="submit" class="btn maredBG btn-block mb-4">Sign up</button>
+                    </div>    
+                    <p class="text-center">or:</p>
+                    <div class="text-center mb-3">
+                      <p>Sign up with:</p>
+                      <button type="button" class="btn mared btn-floating mx-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                        </svg>
+                      </button>
+              
+                      <button type="button" class="btn mared btn-floating mx-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                          <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                        </svg>
+                      </button>
+              
+                      <button type="button" class="btn mared btn-floating mx-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                        </svg>
+                      </button>
+              
+                      <button type="button" class="btn mared btn-floating mx-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                      </button>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+            </div>
         </div>
       </div>
-    </nav>
-    <div>
-        <div tab>
-            <h1 class="text-center pt-5">About Me</h1>
-        </div>
-        <div class="about_me d-flex">
-            <div class="d-flex d-flex-inline p-5">
-                <img src="../photo/nick.jpg" alt="photo">
-            </div>
-            <div class="d-flex d-flex-inline p-5">
-                <p>I am a graphic designer currently working here in Misamis Oriental and a student of Kodego PH as Full Stack Web Dev.
-                    To be honest, years ago I once a student taking a course Civil Engineering in Cagayan de Oro College where I learn programmming. We
-                    have subject before called Computer Programming 101. I mastered any computer related subject but then I failed my Integral Calculus
-                    three times. So I decided to stop for the meantime to give my self break. A year later my interest in schooling is gone because I became
-                    practical that’s I started to work to help my family and to pay my debt of gratitude and the mess in my life. At first I enjoyed my work but few
-                    years later I am not happy anymore of my work. I know to my self that there is something missing in me. And I realize that this what I want,
-                    to develop something using codes. My goal right now is to finish this bootcamp so I can start working again and make my self stable for good.</p>
-            </div>
-        </div>
     </div>
-</body>
-<footer>
-    <nav class="navbar navbar-expand-lg"">
+  </div>
+  
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand p-3 pe-5 ps-5" href="#"><img src="../photo/EB_logo.png" alt=""></a>
+      
+      <form class="d-flex" role="search">
+              <div class="input-group">
+                  <input class="form-control text-white" type="search" placeholder="Search" aria-label="Search" id="example-search-input" style="background-color: #950101; border-top: white;  border-left: white; border-right: white; border-radius: none;">
+                  <span class="input-group-append">
+                      <button class="btn border-bottom-0 rounded-pill ms-n5" type="button">                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="text-white bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                      </button>
+                  </span>
+              </div>
+      </form>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-icon top-bar"></span>
+        <span class="toggler-icon middle-bar"></span>
+        <span class="toggler-icon bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto gap-3 me-3">
+              <li class="nav-item">
+                <a class="nav-link navbar-dark" aria-current="page" href="../directory/main.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Blog
+                </a>
+                <ul class="dropdown-menu blog-dropdown">
+                  <li><a class="blog dropdown-item" href="../directory/blog1.html">Batanes Food: Best Ivatan Cuisine</a></li>
+                  <li><a class="blog dropdown-item" href="../directory/blog2.html">Batanes Hotels And Restaurant</a></li>
+                  <li><a class="blog dropdown-item" href="../directory/blog3.html">History, Culture and Traditions</a></li>
+                  <li><a class="blog dropdown-item" href="../directory/blog4.html">Learn Some Basic Ivatan Dialect</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-dark active" href="../directory/about-me.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-dark" href="../directory/contact.html">Contact</a>
+              </li>
+        </ul>
+        <div class="navbar mx-3 ">
+          <a type="button" id="logIn" data-bs-toggle="modal" data-bs-target="#logIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"  class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+          </a>    
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <body class="background">
+    <section id="website" class="d-flex w-100 h-100 container">
+      <div class="container mt-5">
+        <div  class="row justify-content-around d-flex">
+          <div class="col-lg-6 flex-column pt-lg-0 order-1 order-lg-2 about-me  px-3 py-3" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="pt-4">About</h2><hr>
+            <p>Batanes is a stunning archipelago located in the Northern Philippines. The islands are known for their stunning landscapes, rich culture and friendly people. The islands are also a popular destination for travel and vacation because of the beautiful weather, incredible sceneries and friendly locals. And we "Explore Batanes" want to promote this amazing place as a tourist spot! We want to share the wonders of Batanes to the world and let the world know that there is a wonderful place to visit that is waiting to be discovered.
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-6 order-2 order-lg-1  container_1 mt-3 mb-5" data-aos="zoom-in" data-aos-delay="200">
+            <img src="../photo/EB_large copy.png" class="img-fluid container_1" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <section id="developer" class="d-flex w-100 h-100 container">
+      <div class="container head mt-3">
+        <h1 class=" head text-align-center">About Developer</h1>
+        <div  class="row justify-content-around d-flex">
+          <div class="col-lg-6 flex-column pt-lg-0 order-2 order-lg-1 about-me  px-3 py-3" data-aos="fade-up" data-aos-delay="200">
+            <h1 class="pt-4">NICK ANTHONY ESCOBIDO <h3>WD55P - ADAPTA</h3></h1>
+            <p>As a student of web development, I have learned a lot about the latest technologies and how to use them to create websites and web applications. I have also gained a lot of experience in working with different coding languages and frameworks. In addition, I have also acquired excellent problem-solving skills that have helped me troubleshoot various issues that I have faced while working on projects. Overall, I am confident in my abilities as a web developer and believe that I have the skills and knowledge necessary to build high-quality websites and applications.</p>
+          </div>
+          <div class="col-lg-5 col-md-6 order-1 order-lg-2  container_2 s-5" data-aos="zoom-in" data-aos-delay="200">
+            <img src="../images/nick.png" class="img-fluid container_1" alt="">
+          </div>
+        </div>
+
+        <div class="container text-center mb-3">
+          <div class="btn-group row align-items-start gap-5" role="group" aria-label="Basic example">
+            <a href="https://www.facebook.com/nickanthony199x" class="col" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" class="white bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+              </svg>
+            </a>
+            <a href="https://www.tiktok.com/@nickanthonyvii?lang=en" class="col" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" class="white bi bi-tiktok" viewBox="0 0 16 16">
+                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+              </svg>
+            </a>
+            <a href="https://discord.com/users/0352" class="col" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" class="white bi bi-discord" viewBox="0 0 16 16">
+                <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+        crossorigin="anonymous">
+    </script>
+  </body>
+  <footer>
+    <nav class="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand navbar_left p-3 pe-5 ps-5" href="../directory/main.html"><img src="../photo/EB_logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <a class="navbar-brand p-3 pe-5 ps-5" href="../directory/main.html"><img src="../photo/EB_logo.png" alt=""></a>
+          <a class="center sticky-bottom" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
+            <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+          </svg></a>
           <div class="collapse navbar-collapse p-3" id="navbarSupportedContent">
           </div>
-          <p class="text-center text-white">All Rights Reserved 2022</p>
+          <p class="text-center text-white m-3">All Rights Reserved 2022</p>
         </div>
       </nav>
-</footer>
+    </footer>
 </html>

@@ -7,18 +7,7 @@
 
 html {
     box-sizing: border-box;
-}
-
-.navbar {
-    background: rgb(158, 28, 39);
-}
-
-.navbar_left a{
-    color: antiquewhite;
-    text-align: right;
-}
-.navbar-nav a:hover{
-    color: rgb(208, 255, 0);
+    max-height: 100vh;
 }
 
 .about_me {

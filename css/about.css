@@ -1,0 +1,236 @@
+@font-face {
+    font-family: 'John';
+    src: url(../fonts/LilJohnny_PERSONAL_USE_ONLY.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* width: 1440px; */
+}
+
+
+html {
+    box-sizing: border-box;
+    max-height: 100vh;
+}
+div.container {
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+.container_1 img {
+    margin-top: 50px;
+    width: 400px;
+    height: 200px;
+    animation: fadeInfromTop 1s linear forwards, floating ease 5s infinite;
+    align-items: center;
+}
+.container_2 img {
+    padding-top: 50px;
+    width: 400px;
+    height: 500px;
+    animation: fadeInfromTop 1s linear forwards, floating ease 5s infinite;
+    align-items: center;
+}
+
+
+@keyframes fadeInfromTop {
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(5%, 0%) rotate(360deg);
+    }
+    25% {
+        transform: translate(10%, 0%) rotate(360deg);
+    }
+    50% {
+        transform: translate(0%, 0%) rotate(360deg);
+    }
+    75% {
+        transform: translate(10%, 0%) rotate(360deg);
+    }
+    100% {
+        transform: translate(5%, 0%) rotate(360deg);
+    }
+}
+
+
+h3 {
+    color: aliceblue;
+}
+
+
+
+.about-me {
+    text-align: justify;
+    border-radius: 25px;
+}
+
+.about-me p {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 25px;
+    text-indent: 50px;
+}
+.about-me h3 {
+    text-decoration: none;
+    color: rgb(247, 1, 234);
+    font-family: 'Helios';
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: end;
+    text-decoration: line-through;
+}
+.about-me h1 {
+    background: linear-gradient(to right,#a21af0,#ff0071);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Helios';
+    font-size: 2.8rem;
+    font-weight: 500;
+    text-align: end;
+}
+.about-me h2 {
+    background: linear-gradient(to right,#a21af0,#ff0071);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Helios';
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.head h1.head{ 
+    text-align: center;
+    font-family: 'John';
+    color: white;
+}
+@media (max-width: 767px) {
+    .about-me h3 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .about-me P {
+        font-size: 1.5rem;
+    }
+    .about-me h1{
+        font-size: 2.2rem;
+        word-spacing: 5px;
+        letter-spacing: 0;
+    }
+}
+.about-me a {
+    color: brown;
+    text-decoration: none;
+}
+
+.icon {
+    justify-content: center;
+    vertical-align: middle;
+    color: #ff0071;
+}
+
+section {
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.568);
+}
+
+.container {
+    padding-top: 50px;
+}
+
+.background {
+    background-image: url(../photo/peakpx.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    background-attachment: fixed;
+}
+
+a.col svg.white {
+    cursor: pointer;
+    color: #ffffff;
+    border-radius: 18px;
+    transition: .4s;
+    background-color: rgba(255, 255, 255, 0.199);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    vertical-align: middle;
+
+}
+
+a.col svg.white:hover {
+    z-index: 1;
+    border-color: transparent;
+    background: linear-gradient(
+        90deg,
+        #ff0000,
+        #f5018f,
+        #ee0202,
+        #ff49c2,
+        #ff6666,
+        #ff0000
+    );
+    background-size: 400%;
+    box-shadow: 0 0 50px ; 
+    animation: glow 12s linear forwards;
+}
+
+@keyframes glow {
+
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 400%;
+    }
+}
+
+a.col svg.white::before{
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background: inherit;
+    filter: blur(36px);
+    opacity: 0;
+    transition: .4s ease-out;
+}
+
+a.col svg.white:hover::before{
+    opacity: 1;
+    z-index: -1;
+}
+
+/* .white {
+    color:#fff;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+.white:hover{
+    color: linear-gradient(50deg, #950101, #3D0000, #f10000);
+    text-shadow:0px 0px 80px #950101;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+} */

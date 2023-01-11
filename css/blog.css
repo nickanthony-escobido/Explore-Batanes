@@ -1,0 +1,124 @@
+.food_taste {
+    height: 200px;
+    width: 250px;
+}
+.food_taste2 {
+    height: 400px;
+    width: 250px;
+}
+@media (max-width: 768px) {
+    .food_taste {
+      width: 100px;
+      height: 100%;
+    }
+    .food_taste2 {
+      width: 100px;
+      height: 100%;
+    }
+  }
+
+  .list-group-numbered .active {
+    background-image: linear-gradient(45deg, #ff0000, #950101, #3d0000);
+    color: aliceblue;
+    border-radius: 25px;
+
+  }
+  .list-group-item:hover {
+    background-image: linear-gradient(45deg, #0000005b, #950101, #3d0000);
+    color: aliceblue;
+    border-radius: 25px;
+  }
+
+  .food_bg {
+    background-image: url('../photo/foodbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .resto_bg {
+    background-image: url('../photo/resbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .hist_bg {
+    background-image: url('../photo/hisbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .food_bg {
+    background-image: url('../photo/foodbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .art_body{
+    margin-top: 80px;
+  }
+
+  .art_title {
+    margin-top: 80px;
+    font-size: 75px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 5px 5px 3px #950101;
+  }
+
+  strong {
+    color: #950101;
+  }
+
+  .card {
+    text-align: center;
+    color: white;
+    background-color: #950101;
+  }
+
+#blog4 .card {
+  background-color: white;
+  color: black;
+}
+#blog4 .card-text {
+  text-align: start;
+}
+
+  .history {
+    width: 750px;
+    height: 550px;
+  }
+  @media (max-width: 768px) {
+    .history {
+      width: 500px;
+      height: 300px;
+    }
+  }
+
+  small {
+    text-align: center;
+    justify-content: center;
+  }
+
+  iframe {
+    width: 750px;
+    height: 400px;
+  }
+  @media (max-width: 768px) {
+    iframe {
+      width: 500px;
+      height: 300px;
+    }
+  }
+
+  .red {
+    color: red;
+  }
+
+  .green {
+    color: green;
+  }
+
+  .blue {
+    color: blue;
+  }
+
+  .position-sticky {
+    padding-top: 120px;
+  }

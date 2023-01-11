@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Explore Batanes</title>
+
+    <link 
+    rel="icon" 
+    href="../photo/EB_logo.png"
+    type="image/icon type">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+ 
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="../css/blog.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navFoot.css">
+  </head>
+
+  <div class="modal fade" id="logIn" tabindex="-1" aria-labelledby="logInLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body"><!-- Pills navs -->
+           <div class="mb-5">
+            <ul class="nav nav-tabs">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link mared active" type="button" data-bs-toggle="tab"  id="login-tab" aria-current="page" data-bs-target="#login" role="tab" aria-controls="login" aria-selected="true">Sign in</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link mared" type="button" data-bs-toggle="tab"  id="register-tab" aria-current="page" data-bs-target="#register" role="tab" aria-controls="register" aria-selected="true">Sign up</a>
+              </li>
+            </ul>
+           </div> 
+
+
+            <div class="tab-content" id="myTabControl">
+                <div class="tab-pane fade show active" role="tabpanel" id="login" aria-labelledby="login-tab">
+                    <form>
+                        <div class="form-floating mb-3">
+                          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                          <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                          <label for="floatingPassword">Password</label>
+                        </div>
+                  
+                        <!-- 2 column grid layout -->
+                        <div class="row mb-4">
+                          <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-3 mb-md-0">
+                              <input class="form-check-input maredBG" type="checkbox" value="" id="loginCheck" checked />
+                              <label class="form-check-label" for="loginCheck"> Remember me </label>
+                            </div>
+                          </div>
+                  
+                          <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Simple link -->
+                            <a class="mared" href="#!">Forgot password?</a>
+                          </div>
+                        </div>
+                  
+                        <!-- Submit button -->
+                        <div class="d-grid">
+                          <button type="submit" class="btn maredBG btn-block mb-4">Sign in</button>
+                        </div>    
+                        
+                        <p class="text-center">or:</p>
+                        <div class="text-center mb-3">
+                          <p>Sign in with:</p>
+                          <button type="button" class="btn mared btn-floating mx-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                          </button>
+                  
+                          <button type="button" class="btn mared btn-floating mx-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                              <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                            </svg>
+                          </button>
+                  
+                          <button type="button" class="btn mared btn-floating mx-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                            </svg>
+                          </button>
+                  
+                          <button type="button" class="btn mared btn-floating mx-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                          </button>
+                          </button>
+                        </div>
+                        <!-- Register buttons -->
+                        <div class="text-center">
+                          <p>Not a member? <a class="mared" href=#register-tab>
+                            Register</a></p>
+                        </div>
+                      </form>
+                </div>
+                <div class="tab-pane fade show" role="tabpanel" id="register" aria-labelledby="register-tab">
+                  <form>
+                    <!-- Name input -->
+                    <div class="form-floating mb-1">
+                      <input type="name" class="form-control" id="floatingInput" placeholder="name">
+                      <label for="floatingInput">Name</label>
+                    </div>
+              
+                    <!-- Username input -->
+                    <div class="form-floating mb-1">
+                      <input type="username" class="form-control" id="floatingInput" placeholder="username">
+                      <label for="floatingInput">Username</label>
+                    </div>
+              
+                    <!-- Email input -->
+                    <div class="form-floating mb-1">
+                      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                      <label for="floatingInput">Email address</label>
+                    </div>
+
+                    <div class="row g-1">
+                   <!-- Password input -->
+                      <div class="form-floating col ps-1 mb-1">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                      </div>
+              
+                      <!-- Repeat Password input -->
+                      <div class="form-floating col ps-1 mb-1">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="repeat Password">
+                        <label for="floatingPassword">Repeat Password</label>
+                      </div>
+                    </div>
+              
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-2">
+                      <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+                        aria-describedby="registerCheckHelpText" />
+                      <label class="form-check-label" for="registerCheck">
+                        I have read and agree to the terms
+                      </label>
+                    </div>
+              
+                    <!-- Submit button -->
+                    <div class="d-grid">
+                      <button type="submit" class="btn maredBG btn-block mb-4">Sign up</button>
+                    </div>    
+                    <p class="text-center">or:</p>
+                    <div class="text-center mb-3">
+                      <p>Sign up with:</p>
+                      <button type="button" class="btn mared btn-floating mx-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                        </svg>
+                      </button>
+              
+                      <button type="button" class="btn mared btn-floating mx-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                          <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                        </svg>
+                      </button>
+              
+                      <button type="button" class="btn mared btn-floating mx-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                          <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                        </svg>
+                      </button>
+              
+                      <button type="button" class="btn mared btn-floating mx-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                      </button>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand p-3 pe-5 ps-5" href="#"><img src="../photo/EB_logo.png" alt=""></a>
+      
+      <form class="d-flex" role="search">
+              <div class="input-group">
+                  <input class="form-control text-white" type="search" placeholder="Search" aria-label="Search" id="example-search-input" style="background-color: #950101; border-top: white;  border-left: white; border-right: white; border-radius: none;">
+                  <span class="input-group-append">
+                      <button class="btn border-bottom-0 rounded-pill ms-n5" type="button">                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="text-white bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                      </button>
+                  </span>
+              </div>
+      </form>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-icon top-bar"></span>
+        <span class="toggler-icon middle-bar"></span>
+        <span class="toggler-icon bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto gap-3 me-3">
+              <li class="nav-item">
+                <a class="nav-link navbar-dark" aria-current="page" href="../directory/main.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle  active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Blog
+                </a>
+                <ul class="dropdown-menu blog-dropdown">
+                  <li><a class="blog dropdown-item  active" href="../directory/blog1.html">Batanes Food: Best Ivatan Cuisine</a></li>
+                  <li><a class="blog dropdown-item" href="../directory/blog2.html">Batanes Hotels And Restaurant</a></li>
+                  <li><a class="blog dropdown-item" href="../directory/blog3.html">History, Culture and Traditions</a></li>
+                  <li><a class="blog dropdown-item" href="../directory/blog4.html">Learn Some Basic Ivatan Dialect</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-dark" href="../directory/about-me.html">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-dark" href="../directory/contact.html">Contact</a>
+              </li>
+        </ul>
+        <div class="navbar mx-3 ">
+          <a type="button" id="logIn" data-bs-toggle="modal" data-bs-target="#logIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"  class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+          </a>    
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<body class="food_bg cover-container">
+    
+    <div class="container">
+
+  <header class="blog-header lh-1 py-3 mb-5">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+
+    </div>
+  </header>
+    </div>
+
+<main class="container">
+
+  <div class="p-1 p-md-5 mb-4 rounded main_container text-white">
+    <h1 class="art_title" >BATANES FOOD: <br> BEST IVATAN CUISINE</h1>
+  </div>
+
+  <div class="row g-5 bg-white art_body">
+    <div class="col-md-8 ">  
+      <article class="blog-post">
+        <p class="blog-post-meta">By <a style="text-decoration: none;" href="https://www.facebook.com/i.am.aileen">AILEEN ADALID</a></p>
+
+        <div style="font-size: 18px; font-weight: 400;">
+          <p>The Philippines’ northern paradise, Batanes, is a place that I proudly call ‘home’. Ask any tourist who has been to our group of islands and they will surely speak volumes of its utter beauty and serenity — however, that doesn’t stop there because Batanes food or Ivatan cuisine is something to rave about too.</p>
+          <p>We are surrounded by clear seas and lush greenery, after all, so you will definitely find a varied selection of seafood and vegetable dishes. They may all be cooked in a way that is simple, but I guarantee you, they are all flavorsome!</p>
+          <p>The best part of it all…? You’ll be assured that every plate will be fresh and organic!</p>
+          <p>So in order to make the most of your Batanes itinerary, let me give you an idea of the top Ivatan food or dishes to try, as well as where to best try them.</p>
+        </div>
+
+        <div class="mt-5">
+          <div id="one" class="m-5" hei>
+            <h3>1. Uved</h3>
+            <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <p>Called ‘tabtab‘ in Sabtang (one of the 3 inhabited islands in Batanes), uved or uvud is one of those Ivatan comfort food that I always miss!</p>
+        
+                    <p>It’s basically made of finely-grated corn (which is found at the base of a trunk of a banana plant) that’s mixed with ground meat (beef or pork), and minced fish. Afterward, it is seasoned with onion, garlic, salt, and pepper. This will be rolled into balls or served as-is and can either be with or without its broth.</p>
+                </div>
+                <img class="food_taste m-3 vertical-align-middle" src="../photo/food1.jpg"alt="1. Uved">
+            </div>
+          </div>
+  
+          <div id="two" class="m-5" hei>
+            <h3>2. Dibang</h3>
+            <div class="row g-0  flex-md-row mb-4 h-md-250 position-relative">
+                <img class="food_taste m-3 vertical-align-middle" src="../photo/food2.jpg"alt="2. Dibang">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <p>A common fish that you will find in the islands is dibang or flying fish — yes, it does ‘fly’ or leap out of the water, a defense mechanism to evade predators. To date, it has different variations (other than simply frying it as is), such as:</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <p><strong>Lataven</strong>– are you familiar with kinilaw-style of preparing fish meat in the Philippines or simply, ‘ceviche’? If yes, then lataven is very similar to this. Dibang (or any kind of fish) is drenched in vinegar and calamansi juice, as well as mixed with minced ginger, onions, and salt.</p>
+                </li>
+                <li>
+                    <p><strong>Maytahes</strong> (one-day-old) – after the fish is cleaned and opened up, it will be marinated in salt, vinegar, and garlic and then laid out under the sun for a day to dry.</p>
+                </li>
+            </ul>
+          </div>
+
+          <div id="three" class="m-5" hei>
+            <h3>3. Vunes</h3>
+            <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <p>This is a dish that my father used to prepare a lot for our family and it’s one of my favorites! This is made of preserved gabi (taro) stalks which could technically last for years.</p>
+        
+                    <p>As a typical Batanes food, the gabi stalks are first soaked in water. Afterward, it will be cut and minced and then cooked together with pork and patola (or sponge gourd).</p>
+
+                    <p>You could surely think of it as another version of laing, a Bicol specialty in the Philippines.</p>
+                </div>
+                <img class="food_taste m-3 vertical-align-middle" src="../photo/food3.jpg"alt="3. Vunes">
+            </div>
+          </div>
+
+          <div id="four" class="m-5" hei>
+            <h3>4. Payi</h3>
+            <div class="row g-0  flex-md-row mb-4 h-md-250 position-relative">
+                <img class="food_taste2 m-3 vertical-align-middle" src="../photo/food4.jpg"alt="4. Payi">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <p>Payi or lobsters are abundant in Batanes, so a humongous one can be easily bought for as cheap as Php 150 (or $3)! Indeed you could imagine my surprise when my family and I moved out of Batanes and I found out that my favorite payi is ridiculously expensive in the city.</p>
+                    <p>Another crustacean that you’ve probably heard about would be tatus or coconut crabs which are well known for their sweet meat and creamy aligue (or crab fat) — after all, they feed on fleshy fruits, nuts, seeds, and coconuts (which is not a big part of their diet, contrary to popular belief).</p>
+                </div>
+            </div>
+            <div>
+                <p>Anyhow, these coconut crabs are impressive because they can climb a coconut tree, take one, and cut its husk with just their claws; although… it can actually take several days for the coconut to be opened!</p>
+
+                <p>Now here’s the thing: tatus is declared as an endangered species.</p>
+            </div>
+          </div>
+
+          <div id="five" class="m-5" hei>
+            <h3>5. Root Crops</h3>
+            <div class="row g-0 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <p>The Batanes Islands are abundant with root crops, namely:</p>
+        
+                    <ul>
+                        <li>
+                            <p><strong>Wakay</strong> (sweet potato)</p>
+                        </li>
+                        <li>
+                            <p><strong>Dukay</strong> (yam)</p>
+                        </li>
+                        <li>
+                            <p><strong>Uvi</strong> (another type of yam)</p>
+                        </li>
+                        <li>
+                            <p><strong>Sudi</strong> (taro)</p>
+                        </li>
+                    </ul>
+                </div>
+                <img class="food_taste m-3 vertical-align-middle" src="../photo/food5.jpg"alt="5. Root Crops">
+            </div>
+                            <div>
+                    <p>They’re steamed, fried, or smoked; but recently, we have started to make different ways of cooking it (I’ve heard that there’s even a wakay donut now).</p>
+
+                    <p>Personally, I love to eat them fried and then dipped in condensed milk or coconut cream!</p>
+                </div>
+          </div>
+
+          <div id="six" class="m-5" hei>
+            <h3>6. Luñis</h3>
+            <div class="row g-0  flex-md-row mb-4 h-md-250 position-relative">
+                <img class="food_taste m-3 vertical-align-middle" src="../photo/food6.jpg"alt="6. Luñis">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <p>This is a different version of the popular Filipino dish, <a style="text-decoration: none;" href="https://en.wikipedia.org/wiki/Adobo">adobo</a>, because <span class="fst-italic">luñis</span> is rather served dry.</p>
+                    <p>Lasting for quite a while, this traditional dish is made of pork cooked with rock salt until its fat is rendered and it turns golden brown. Back in the old days, it is stored in its own lard in jars for months to ensure continuous supply.</p>
+                </div>
+            </div>
+            <div>
+                <p>To best eat luñis, I love to pair it with supas whilst dipping it in vinegar and garlic!</p>
+            </div>
+          </div>
+  
+          <div id="seven" class="m-5" hei>
+            <h3>7. Supas</h3>
+            <div class="row g-0 overflow-hidden flex-md-row h-md-250 position-relative">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <p>Always a staple during fiestas or festivals, <span class="fst-italic">supas</span> or <span class="fst-italic">balencyana</span> (as called in Itbayat Island) is rice cooked in turmeric pulp (<span class="fst-italic">yellow ginger</span>) that’s often mixed with garlic and pork.</p>
+                    <p>It’s aptly called yellow rice because, well… it is yellow from the turmeric. Some people would often say that the taste is close to ‘<span class="fst-italic">java rice</span>‘, and that’s right! Though, I have to say that I like our supas more when it comes to flavor.</p>
+                </div>
+                <img class="food_taste m-3 vertical-align-middle" src="../photo/food7.jpg"alt="7. Supas">
+            </div>
+          </div>
+  
+          <div id="eight" class="m-5" hei>
+            <h3>8. Other Local Vegetables</h3>
+            <div class="row g-0  flex-md-row h-md-250 position-relative">
+                <img class="food_taste m-3 vertical-align-middle" src="../photo/food6.jpg"alt="8. Other Local Vegetables">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <ul>
+                        <li>
+                            <p><strong>Tamiduk</strong> – also called as pako or Fiddlehead fern, this is arguably the most popular vegetable in Batanes and one of my favorites too! When I was still living in the island, I often helped prepare it for our meals as it was easy to make: simply sauté and season with salt, garlic and onions. If you go to restaurants, they often serve it as a salad with dressing ( <span class="fst-italic">such as calamansi vinaigrette</span> ).</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <p><strong>Utut nu Bulyas</strong> – my favorite morning fix, these are scallions or green onions that are sautéed together with scrambled egg and spices.</p>
+                </li>
+                <li>
+                    <p><strong>Chinavules</strong> – these are steamed taro leaves that are mixed with garlic, ginger, and onions.
+            </ul>
+          </div>
+  
+          <div id="nine" class="m-5" hei>
+            <h3>9. Other Batanes Food from the Sea</h3>
+            <div class="row g-0 overflow-hidden flex-md-row h-md-250 position-relative">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <ul>
+                        <li>
+                            <p><strong>Arayu</strong>– also called mahi-mahi or golden dorado, this fish is indeed of golden color and slightly mixed with hues of blue and green. In Batanes, harvesting this fish is a part of a sacred tradition (kapayvanuvanua) in the small fishing village of Diura. Up to this day, the Ivatans there still practice it as they believe that it will protect them from the sea as well as give them a bountiful catch.</p>
+                        </li>
+                    </ul>
+                </div>
+                <img class="food_taste m-3 vertical-align-middle" src="../photo/food9.jpg"alt="9. Other Batanes Food from the Sea">
+            </div>
+            <ul>
+                <li>
+                    <p><strong>Kanañis</strong>– octopus that is commonly fried, this is often a favorite when it comes to beer drinking sessions!</p>
+                </li>
+                <li>
+                    <p><strong>Seaweed soup or balls</strong> – my family actually rarely eats this but it’s quite a unique treat ( <span class="fst-italic">and healthy too!</span> )</p>
+                </li>
+                <li>
+                    <p><strong>Uni</strong> – these are sea urchins and they can be eaten raw or cooked.</p>
+                </li>
+                <li>
+                    <p><strong>Dumay</strong>– also called as a ‘ <span class="fst-italic">common periwinkle</span> ’, dumay is a species of small edible sea snail; however, as much as I love them, it’s a bit of a pain to eat ( <span class="fst-italic">you have to use a pin to scoop it out, but I bet restaurants can serve this to you without its shell</span> ).</p>
+                </li>
+            </ul>
+          </div>
+
+          <div>
+            <p>There is absolutely a LOT of other Batanes food that you should try, but for now, these are the top dishes that I would recommend that you try as a start!</p>
+
+            <p> Now, if you’re wondering about a must-try fruit or drink, below are what I would recommend ( <span class="fst-italic">other than the typical mangoes, coconuts, etc.</span> ).</p>
+          </div>
+
+          <div class="m-5" hei>
+            <h3><strong>BONUS</strong>: Other Batanes Fruit & Drink</h3>
+            <div class="row g-0 overflow-hidden flex-md-row h-md-250 position-relative">
+                <div class="col p-3 d-flex flex-column position-static">
+                    <ul>
+                        <li>
+                            <p><strong>Chayi</strong>– or Spanish lime is not actually lime but more of a variant of lychee. It can get messy to open it up though since its skin’s juice can be quite sticky, but the creamy pulp inside is so heavenly to eat!</p>
+                    </ul>
+                </div>
+                <img class="food_taste m-3 vertical-align-middle" src="../photo/foodbonus.png"alt="palek">
+            </div>
+            <ul>
+                <li>
+                    <p><strong>Palek</strong>– our native wine that’s made from sugarcane and these are sold wildly across the islands! ( <span class="fst-italic">As pictured here</span> ).</p>
+                </li>
+            </ul>
+          </div>
+
+          <hr>
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 1rem;">
+
+        <div class="px-5 border">
+          <h4 class="fst-italic mt-5">Articles</h4>
+          <ol class="list-group-numbered mb-3">
+            <li>
+              <a class="list-group-item px-3 py-2 m-2 active" href="blog1.html">BATANES FOOD: BEST IVATAN CUISINE</a>
+            </li>
+            <li>
+              <a class="list-group-item px-3 py-2 m-2" href="blog2.html">BATANES HOTELS AND RESTAURANT</a>
+            </li>
+            <li>
+              <a class="list-group-item px-3 py-2 m-2" style="text-transform: uppercase;" href="blog3.html">History, Culture and Traditions</a>
+            </li>
+            <li>
+              <a class="list-group-item px-3 py-2 m-2" href="blog4.html">LEARN SOME BASIC IVATAN DIALECT</a>
+            </li>
+            
+          </ol>
+        </div>
+
+        <div class="m-5">
+          <h6 class="">Be updated !</h6>
+          <!-- Button trigger modal -->
+          <button type="button" id="logIn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#logIn">
+            Log in
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand p-3 pe-5 ps-5" href="../directory/main.html"><img src="../photo/EB_logo.png" alt=""></a>
+        <a class="center sticky-bottom" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
+          <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+        </svg></a>
+        <div class="collapse navbar-collapse p-3" id="navbarSupportedContent">
+        </div>
+        <p class="text-center text-white m-3">All Rights Reserved 2022</p>
+      </div>
+    </nav>
+</footer>
+
+
+  <script 
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+      crossorigin="anonymous">
+  </script>
+
+  </body>
+</html>
