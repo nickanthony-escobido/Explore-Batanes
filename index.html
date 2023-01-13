@@ -18,6 +18,72 @@
  
 
     <style>
+      @font-face {
+        font-family: 'John' ;
+        src: url(fonts/LilJohnny_PERSONAL_USE_ONLY.otf);
+      }
+
+      .btn {
+      font-family: 'John', sans-serif;
+      cursor: pointer;
+      position: relative;
+      padding: 10px 36px;
+      font-size: 30px;
+      color: #ffffff;
+      background: 3px solid #950101;
+      border-radius: 18px;
+      transition: .4s;
+      background-color:  #950101;
+      vertical-align: middle;
+
+}
+
+  .btn:hover {
+      z-index: 1;
+      border-color: transparent;
+      background: linear-gradient(
+        90deg,
+        #ff0000,
+        #950101,
+        #3d0000,
+        #000000,
+        #3d0000,
+        #950101,
+        #ff0000
+      );
+      background-size: 400%;
+      box-shadow: 0 0 15px; 
+      animation: glow 12s linear forwards;
+}
+
+@keyframes glow {
+
+    from {
+        background-position: 0%;
+    }
+    to {
+        background-position: 400%;
+    }
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background: inherit;
+    filter: blur(36px);
+    opacity: 0;
+    transition: .4s ease-out;
+}
+
+.btn:hover::before{
+    opacity: 1;
+    z-index: -1;
+}
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;

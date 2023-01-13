@@ -6,3 +6,9 @@
     margin-top: 50px;
     justify-content: center;
 }
+
+div.cotact-icons img.icon {
+    vertical-align: middle;
+    align-items: center;
+    color: aqua;
+}
